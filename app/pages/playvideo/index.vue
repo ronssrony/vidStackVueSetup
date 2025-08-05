@@ -4,11 +4,15 @@
       <media-player
           class="vds-video-layout vds-audio-layout branded-player"
           title="OTA LMS Videos"
-          src="https://youtu.be/z6fSugl6Jx0?si=_xiTuEe295bO8WB7"
+          src="https://www.youtube.com/watch?v=kLjoiMmE2oU&t=83s&ab_channel=MOJTAHIDULISLAM"
+          poster='https://files.vidstack.io/sprite-fight/poster.webp'
           autoplay
       >
-        <media-provider></media-provider>
+        <media-provider>
+          <media-poster class="vds-poster"></media-poster>
+        </media-provider>
         <media-video-layout>
+
           <media-controls class="vds-controls">
             <!-- Top Control Bar with Brand -->
             <div class="vds-controls-group top-controls">
@@ -26,9 +30,10 @@
 </script>
 
 <style scoped>
+
 .video-container {
   width: 100%;
-  aspect-ratio: 16/9;
+
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   border-radius: 16px;
   overflow: hidden;
@@ -63,6 +68,7 @@
   --media-brand-secondary: #3b82f6; /* Blue-500 */
   --media-brand-accent: #ea580c; /* Orange-600 for hover states */
 
+
   /* Typography */
   --media-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
@@ -78,15 +84,14 @@
   --media-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   /* Enhanced Loading Animation */
-  --media-buffering-animation: vds-buffering-pulse 1.5s ease-in-out infinite;
-  --media-buffering-size: 48px;
-  --media-buffering-track-color: rgba(248, 250, 252, 0.1);
+  --media-buffering-size: 66px;
+  --media-buffering-track-color: rgb(255, 112, 0);
   --media-buffering-track-fill-color: #f97316;
   --media-buffering-track-fill-offset: 25;
   --media-buffering-track-fill-opacity: 0.8;
-  --media-buffering-track-fill-width: 4;
-  --media-buffering-track-opacity: 0.3;
-  --media-buffering-track-width: 4;
+  --media-buffering-track-fill-width: 18;
+  --media-buffering-track-opacity: 0.8;
+  --media-buffering-track-width: 16;
   --media-buffering-transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
 
   /* Modern Button Design */
@@ -191,18 +196,6 @@
   --media-slider-thumb-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --media-slider-thumb-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
 
-  /* Enhanced Slider Tracks */
-  --media-slider-track-width: 100%;
-  --media-slider-track-bg: rgba(248, 250, 252, 0.2);
-  --media-slider-track-border-radius: 4px;
-  --media-slider-track-fill-bg: #f97316;
-  --media-slider-track-fill-live-bg: #3b82f6;
-  --media-slider-track-height: 6px;
-  --media-slider-track-progress-bg: rgba(248, 250, 252, 0.4);
-  --media-slider-focused-thumb-shadow: 0 0 0 6px rgba(249, 115, 22, 0.3);
-  --media-slider-focused-thumb-size: calc(var(--thumb-size) * 1.2);
-  --media-slider-focused-track-height: calc(var(--track-height) * 1.5);
-
   /* Slider Steps */
   --media-slider-step-width: 3px;
   --media-slider-step-color: rgba(148, 163, 184, 0.6);
@@ -227,7 +220,7 @@
   /* Slider Value Display */
   --media-slider-value-bg: rgba(15, 23, 42, 0.95);
   --media-slider-value-border-radius: 6px;
-  --media-slider-value-border: 1px solid rgba(249, 115, 22, 0.3);
+
   --media-slider-value-color: #f8fafc;
   --media-slider-value-gap: 4px;
   --media-slider-value-padding: 6px 12px;
@@ -259,7 +252,6 @@
   --media-menu-top-bar-bg: rgba(249, 115, 22, 0.1);
   --media-menu-arrow-icon-size: 20px;
   --media-menu-icon-rotate-deg: 90deg;
-
   --media-menu-enter-animation: vds-menu-enter 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --media-menu-exit-animation: vds-menu-exit 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -393,56 +385,4 @@
   }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .video-container {
-    border-radius: 12px;
-  }
-
-  .branded-player {
-    --media-button-size: 40px;
-    --media-controls-padding: 12px;
-    --media-menu-min-width: 200px;
-    --media-menu-padding: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .video-container {
-    border-radius: 8px;
-  }
-
-  .branded-player {
-    --media-button-size: 36px;
-    --media-controls-padding: 8px;
-    --media-menu-min-width: 180px;
-    --media-slider-height: 48px;
-  }
-}
-
-/* Focus and Accessibility */
-.branded-player:focus-within {
-  --media-focus-ring: 0 0 0 3px rgba(59, 130, 246, 0.5);
-}
-
-/* High Contrast Mode Support */
-@media (prefers-contrast: high) {
-  .branded-player {
-    --media-brand: #ff8c00;
-    --media-controls-color: #ffffff;
-    --media-slider-track-bg: rgba(255, 255, 255, 0.5);
-  }
-}
-
-/* Reduced Motion Support */
-@media (prefers-reduced-motion: reduce) {
-  .branded-player {
-    --media-button-hover-transition: none;
-    --media-tooltip-enter-animation: none;
-    --media-tooltip-exit-animation: none;
-    --media-menu-enter-animation: none;
-    --media-menu-exit-animation: none;
-    --media-buffering-animation: none;
-  }
-}
 </style>

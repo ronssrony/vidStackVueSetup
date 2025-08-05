@@ -15,6 +15,8 @@ iframe.value?.playVideo()
       id="w4rG5GY9IlAx"
       ref="iframe"
       title="Rick Astley - Never Gonna Give You Up (Official Music Video)"
+      class="ytp-large-play-button ytp-button ytp-large-play-button-red-bg"
+      ytp-cued-thumbnail-overlay-image
   />
 </template>
 
